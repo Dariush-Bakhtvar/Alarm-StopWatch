@@ -1,5 +1,119 @@
 @import "mixin";
 @import "basic";
 .container {
+    margin-top: 1%;
+    display: grid;
+    grid-template-rows: 30px 420px 80px;
+    width: 260px;
+    height: 530px;
+    background-color: var(--bg-appColor);
+    border-radius: 20px;
+    box-shadow: 38px 38px 66px #c0c8cf, -20px -20px 40px #ffffff;
+    position: relative;
+}
+
+.notification {
+    font-size: 1.2rem;
+    .notific-icons {
+        width: 100%;
+        height: 100%;
+        display: grid;
+        grid-template-columns: 200px 20px 20px 20px;
+        align-items: center;
+    }
+    .time {
+        display: block;
+        width: 100%;
+        padding-left: 10px;
+        font-size: 1.4rem;
+    }
+}
+
+.appButton {
+    font-size: 1.7rem;
+    .btn-group {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        width: 100%;
+        height: 100%;
+        span {
+            cursor: pointer;
+            display: block;
+            width: 40px;
+            height: 40px;
+            text-align: center;
+            line-height: 40px;
+            background-color: var(--bg-btnColor);
+            border-radius: 10px;
+            box-shadow: 7px 7px 15px #c0c8cf, -7px -7px 15px #ffffff;
+        }
+    }
+}
+
+.setting {
+    width: 100%;
+    height: 50px;
     display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding-right: 15px;
+    span {
+        cursor: pointer;
+        width: 35px;
+        height: 35px;
+        font-size: 1.7rem;
+        border-radius: 50%;
+        box-shadow: 7px 7px 15px #c0c8cf, -7px -7px 15px #ffffff;
+        text-align: center;
+        line-height: 35px;
+    }
+}
+
+.clock {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.clock-wrapper {
+    width: 80%;
+    height: 50%;
+    background-color: var(--bg-clock);
+    border-radius: 50%;
+    // box-shadow: inset 5px 5px 10px #cfd9e1, inset -5px -5px 10px #f9ffff;
+    box-shadow: 5px 5px 10px #cfd9e1, -5px -5px 10px #f9ffff;
+    position: relative;
+}
+
+.clockline {
+    width: 100%;
+    height: 100%;
+    transform: translateX(-1%);
+    li {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 2px;
+        height: 5px;
+        background-color: var(--clock-handel);
+        $r: 98;
+        @for $i from 1 through 100 {
+            //What I want to repeat
+            &:nth-child(#{$i}) {
+                $angle: 450 + (360 / 100) * $i;
+                $radian: (360 / 100) * ($pi / 180) * $i;
+                $x: $r * cos($radian) + px;
+                $y: $r * sin($radian) + px;
+                transform: translate($x, $y) rotate($angle + deg);
+                transform-origin: 100% 0%;
+                animation-delay: unquote("0.#{$i}s");
+                @if ($i % 5)==0 {
+                    height: 15px;
+                }
+            }
+        }
+    }
 }
