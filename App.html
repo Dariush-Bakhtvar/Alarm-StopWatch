@@ -29,17 +29,19 @@
                 </li>
             </ul>
         </section>
+        <!-- end of notification  -->
         <section class="app-wrapper">
             <div class="setting">
                 <span>
                     <i class="far fa-cog"></i>
                 </span>
             </div>
-            <div class="clock">
+            <section class="clock">
                 <div class="clock-wrapper">
                     <div class="second hand"></div>
                     <div class="minuts hand"></div>
                     <div class="hours hand"></div>
+                    <div class="center"></div>
                     <ul class="clockline">
                         <li></li>
                         <li></li>
@@ -143,11 +145,211 @@
                         <li></li>
                     </ul>
                 </div>
-            </div>
-            <div class="stopwatch"></div>
-            <div class="alarm"></div>
-            <div class="timer"></div>
+            </section>>
+            <section class="stopwatch">
+                <div class="sw-wrapper">
+                    <ul class="clockline">
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                    </ul>
+                    <div class="sw-timer">
+                        <div class="sw-miliSecond">00</div>
+                        <div class="colon">:</div>
+                        <div class="sw-second">00</div>
+                        <div class="colon">:</div>
+                        <div class="sw-minuts">00</div>
+                        <div class="colon">:</div>
+                        <div class="sw-hour">00</div>
+                    </div>
+                </div>
+                <div class="sw-Contoler">
+                    <button><i class="fas fa-play"></i></button>
+                    <button><i class="far fa-pause"></i></button>
+                    <button><i class="fas fa-plus"></i></button>
+                    <button><i class="far fa-undo-alt"></i></button>
+                </div>
+                <ul class="laps">
+                    <li>
+                        lap.1
+                        <span class="record">01:30:59</span>
+                        <i class="fas fa-trash"></i>
+                    </li>
+                    <li>
+                        lap.1
+                        <span class="record">01:30:59</span>
+                        <i class="fas fa-trash"></i>
+                    </li>
+                </ul>
+            </section>
+            <section class="alarm">
+                <div class="alarm-wrapper">
+                    <div class="add-alarm">
+                        <span data-alarm><i class="fas fa-bell-plus"></i></span>
+                        <p>Alarm</p>
+                    </div>
+                    <div class="alarm-modal-container">
+                        <div class="alarm-modal">
+                            <div class="celander">
+                                <div class="day">18</div>
+                                <div class="date-info">
+                                    <div class="week">thu</div>
+                                    <div class="month">jul</div>
+                                    <div class="years">2021</div>
+                                </div>
+                                <span class="left"><i class="fas fa-angle-left"></i></span>
+                                <span class="right"><i class="fas fa-angle-right"></i></span>
+                            </div>
+                            <div class="set-alarm">
+                                <div class="set-time">
+                                    <div class="get-time">
+                                        <p>21</p>
+                                        <p>:</p>
+                                        <p>36</p>
+                                    </div>
+                                    <div class="reger-group">
+                                        <input type="range" name="hour" id="hoursRenge">
+                                        <input type="range" name="minuts" id="minReng">
+                                    </div>
+                                </div>
+                                <ul class="days">
+                                    <li><a href="#">Mo</a></li>
+                                    <li><a href="#">Tu</a></li>
+                                    <li><a href="#">We</a></li>
+                                    <li><a href="#">Th</a></li>
+                                    <li><a href="#">Fr</a></li>
+                                    <li><a href="#">Sa</a></li>
+                                    <li><a href="#">Su</a></li>
+                                    <li><a href="#">all</a></li>
+                                </ul>
+                                <div class="alarm-btn">
+                                    <button><i class="fas fa-check"></i></button>
+                                    <button><i class="fas fa-times"></i></button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="appendAlarm-container">
+                        <div class="appendAlarm">
+                            <div class="appendDate">
+                                <p class="Date-time">08:00</p>
+                                <ul class="Date-days">
+                                    <li>fr</li>
+                                    <li>sa</li>
+                                    <li>su</li>
+                                </ul>
+                            </div>
+                            <label class="toggle-btn" for="toggle">
+                                <input type="checkbox" class="toggle-input" id="toggle">
+                                <div class="toggle-box">
+                                </div>
+                                <span class="toggle-icon"><i class="fas fa-power-off"></i></span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="hourglass">
+            </section>
         </section>
+        <!-- end of app-wrapper -->
         <section class="appButton">
             <ul class="btn-group">
                 <li>
@@ -164,6 +366,7 @@
                 </li>
             </ul>
         </section>
+        <!-- end of  -->
     </div>
     <script src="js/script.js"></script>
 </body>
