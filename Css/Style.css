@@ -206,6 +206,13 @@ body {
   border-radius: 10px;
   box-shadow: var(--neo-shadow);
 }
+.appButton .btn-group span:active {
+  box-shadow: 5px 5px 10px #cfd9e1, -5px -5px 10px #f9ffff;
+  color: #17aef3;
+}
+.appButton .btn-group .active {
+  color: #177ef3;
+}
 
 .setting {
   width: var(--maxWidth);
@@ -224,6 +231,13 @@ body {
   line-height: 35px;
 }
 
+.app-wrapper {
+  overflow: hidden;
+}
+.app-wrapper .active {
+  display: flex;
+}
+
 /** clock style */
 .clock {
   width: var(--maxWidth);
@@ -233,6 +247,124 @@ body {
 }
 
 .clock-wrapper {
+  width: 80%;
+  height: 50%;
+  background-color: var(--bg-clock);
+  border-radius: 50%;
+  box-shadow: 5px 5px 10px #cfd9e1, -5px -5px 10px #f9ffff;
+  position: relative;
+}
+
+.diallines {
+  width: var(--maxWidth);
+  height: var(--maxHeight);
+  transform: translateX(-1%);
+}
+.diallines li {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 4px;
+  height: 10px;
+  background-color: var(--clock-handel);
+  border-radius: 50%;
+}
+.diallines li:nth-child(1) {
+  transform: rotate(30deg) translate(0px, -98px);
+  transform-origin: 100% 0%;
+}
+.diallines li:nth-child(2) {
+  transform: rotate(60deg) translate(0px, -98px);
+  transform-origin: 100% 0%;
+}
+.diallines li:nth-child(3) {
+  transform: rotate(90deg) translate(0px, -98px);
+  transform-origin: 100% 0%;
+}
+.diallines li:nth-child(4) {
+  transform: rotate(120deg) translate(0px, -98px);
+  transform-origin: 100% 0%;
+}
+.diallines li:nth-child(5) {
+  transform: rotate(150deg) translate(0px, -98px);
+  transform-origin: 100% 0%;
+}
+.diallines li:nth-child(6) {
+  transform: rotate(180deg) translate(0px, -98px);
+  transform-origin: 100% 0%;
+}
+.diallines li:nth-child(7) {
+  transform: rotate(210deg) translate(0px, -98px);
+  transform-origin: 100% 0%;
+}
+.diallines li:nth-child(8) {
+  transform: rotate(240deg) translate(0px, -98px);
+  transform-origin: 100% 0%;
+}
+.diallines li:nth-child(9) {
+  transform: rotate(270deg) translate(0px, -98px);
+  transform-origin: 100% 0%;
+}
+.diallines li:nth-child(10) {
+  transform: rotate(300deg) translate(0px, -98px);
+  transform-origin: 100% 0%;
+}
+.diallines li:nth-child(11) {
+  transform: rotate(330deg) translate(0px, -98px);
+  transform-origin: 100% 0%;
+}
+.diallines li:nth-child(12) {
+  transform: rotate(360deg) translate(0px, -98px);
+  transform-origin: 100% 0%;
+}
+
+.hand {
+  --rotation: 0;
+  background-color: var(--clock-handel);
+  position: absolute;
+  bottom: 50%;
+  left: 50%;
+  transform-origin: bottom;
+  transform: translateX(-87%) rotate(calc(var(--rotation) * 1deg));
+  border-radius: 10px 10px 0 0;
+}
+
+.second {
+  width: 2px;
+  height: 80px;
+  background: #f15b5b;
+}
+
+.minuts {
+  width: 4px;
+  height: 70px;
+}
+
+.hours {
+  width: 4px;
+  height: 50px;
+}
+
+.center {
+  position: absolute;
+  top: 50%;
+  right: 50%;
+  background-color: var(--clock-handel);
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  transform: translate(40%, -50%);
+}
+
+/** stopwatch style */
+.stopwatch {
+  width: var(--maxWidth);
+  height: var(--maxHeight);
+  flex-direction: column;
+  display: none;
+}
+
+.sw-wrapper {
   width: 80%;
   height: 50%;
   background-color: var(--bg-clock);
@@ -775,63 +907,6 @@ body {
   height: 15px;
 }
 
-.hand {
-  --rotation: 0;
-  background-color: var(--clock-handel);
-  position: absolute;
-  bottom: 50%;
-  left: 50%;
-  transform-origin: bottom;
-  transform: translateX(-87%) rotate(calc(var(--rotation) * 1deg));
-  border-radius: 10px 10px 0 0;
-}
-
-.second {
-  width: 2px;
-  height: 80px;
-  background: #f15b5b;
-}
-
-.minuts {
-  --rotation: 90;
-  width: 4px;
-  height: 70px;
-}
-
-.hours {
-  --rotation: 230;
-  width: 4px;
-  height: 50px;
-}
-
-.center {
-  position: absolute;
-  top: 50%;
-  right: 50%;
-  background-color: var(--clock-handel);
-  width: 10px;
-  height: 10px;
-  border-radius: 50%;
-  transform: translate(50%, -50%);
-}
-
-/** stopwatch style */
-.stopwatch {
-  width: var(--maxWidth);
-  height: var(--maxHeight);
-  flex-direction: column;
-  display: none;
-}
-
-.sw-wrapper {
-  width: 80%;
-  height: 50%;
-  background-color: var(--bg-clock);
-  border-radius: 50%;
-  box-shadow: 5px 5px 10px #cfd9e1, -5px -5px 10px #f9ffff;
-  position: relative;
-}
-
 .sw-timer {
   width: 50%;
   height: 80px;
@@ -1146,4 +1221,16 @@ body {
   margin-right: 15px;
 }
 
+.active-slide {
+  animation: slide-In 1s ease-in-out;
+}
+
+@keyframes slide-In {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
 /** timer style *//*# sourceMappingURL=Style.css.map */

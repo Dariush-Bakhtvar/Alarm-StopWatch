@@ -45,6 +45,13 @@
             background-color: var(--bg-btnColor);
             border-radius: 10px;
             box-shadow: var(--neo-shadow);
+            &:active {
+                box-shadow: 5px 5px 10px #cfd9e1, -5px -5px 10px #f9ffff;
+                color: #17aef3;
+            }
+        }
+        .active {
+            color: #177ef3;
         }
     }
 }
@@ -67,6 +74,13 @@
     }
 }
 
+.app-wrapper {
+    overflow: hidden;
+    .active {
+        display: flex;
+    }
+}
+
 
 /** clock style */
 
@@ -79,6 +93,88 @@
 }
 
 .clock-wrapper {
+    width: 80%;
+    height: 50%;
+    background-color: var(--bg-clock);
+    border-radius: 50%;
+    // box-shadow: inset 5px 5px 10px #cfd9e1, inset -5px -5px 10px #f9ffff;
+    box-shadow: 5px 5px 10px #cfd9e1, -5px -5px 10px #f9ffff; //! add to varible
+    position: relative;
+}
+
+.diallines {
+    width: var(--maxWidth);
+    height: var(--maxHeight);
+    transform: translateX(-1%);
+    li {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 4px;
+        height: 10px;
+        background-color: var(--clock-handel);
+        border-radius: 50%;
+        $r: 98;
+        @for $i from 1 through 12 {
+            //What I want to repeat
+            &:nth-child(#{$i}) {
+                transform: rotate(30 * $i + deg) translate(0px, -98px);
+                transform-origin: 100% 0%;
+            }
+        }
+    }
+}
+
+.hand {
+    --rotation: 0;
+    background-color: var(--clock-handel);
+    position: absolute;
+    bottom: 50%;
+    left: 50%;
+    transform-origin: bottom;
+    transform: translateX(-87%) rotate(calc(var(--rotation) * 1deg));
+    border-radius: 10px 10px 0 0;
+}
+
+.second {
+    width: 2px;
+    height: 80px;
+    background: rgb(241, 91, 91);
+}
+
+.minuts {
+    width: 4px;
+    height: 70px;
+}
+
+.hours {
+    width: 4px;
+    height: 50px;
+}
+
+.center {
+    position: absolute;
+    top: 50%;
+    right: 50%;
+    background-color: var(--clock-handel);
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    transform: translate(40%, -50%);
+}
+
+
+/** stopwatch style */
+
+.stopwatch {
+    width: var(--maxWidth);
+    height: var(--maxHeight);
+    @extend %flex_alignCenter;
+    flex-direction: column;
+    display: none;
+}
+
+.sw-wrapper {
     width: 80%;
     height: 50%;
     background-color: var(--bg-clock);
@@ -116,67 +212,6 @@
             }
         }
     }
-}
-
-.hand {
-    --rotation: 0;
-    background-color: var(--clock-handel);
-    position: absolute;
-    bottom: 50%;
-    left: 50%;
-    transform-origin: bottom;
-    transform: translateX(-87%) rotate(calc(var(--rotation) * 1deg));
-    border-radius: 10px 10px 0 0;
-}
-
-.second {
-    width: 2px;
-    height: 80px;
-    background: rgb(241, 91, 91);
-}
-
-.minuts {
-    --rotation: 90;
-    width: 4px;
-    height: 70px;
-}
-
-.hours {
-    --rotation: 230;
-    width: 4px;
-    height: 50px;
-}
-
-.center {
-    position: absolute;
-    top: 50%;
-    right: 50%;
-    background-color: var(--clock-handel);
-    width: 10px;
-    height: 10px;
-    border-radius: 50%;
-    transform: translate(50%, -50%);
-}
-
-
-/** stopwatch style */
-
-.stopwatch {
-    width: var(--maxWidth);
-    height: var(--maxHeight);
-    @extend %flex_alignCenter;
-    flex-direction: column;
-    display: none;
-}
-
-.sw-wrapper {
-    width: 80%;
-    height: 50%;
-    background-color: var(--bg-clock);
-    border-radius: 50%;
-    // box-shadow: inset 5px 5px 10px #cfd9e1, inset -5px -5px 10px #f9ffff;
-    box-shadow: 5px 5px 10px #cfd9e1, -5px -5px 10px #f9ffff; //! add to varible
-    position: relative;
 }
 
 .sw-timer {
@@ -521,6 +556,19 @@
 .Date-time {
     font-size: 2.2rem;
     margin-right: 15px;
+}
+
+.active-slide {
+    animation: slide-In 1s ease-in-out;
+}
+
+@keyframes slide-In {
+    0% {
+        transform: translateX(-100%);
+    }
+    100% {
+        transform: translateX(0);
+    }
 }
 
 
