@@ -75,6 +75,7 @@ btnGroup.forEach((item, index) => {
         appWrapper[selectedItem].style.display = 'flex';
         appWrapper[selectedItem].classList.add('active-slide');
         btnGroup[selectedItem].classList.add('active');
+        if (index == 2) alarm.classList.remove(activeAlarm);
     });
 });
 //
