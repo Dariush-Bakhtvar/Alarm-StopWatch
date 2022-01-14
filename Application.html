@@ -16,7 +16,7 @@
         <section class="notification">
             <ul class="notific-icons">
                 <li>
-                    <span class="time">7:30</span>
+                    <span class="time" data-time>7:30</span>
                 </li>
                 <li>
                     <span><i class="fas fa-signal"></i></span>
@@ -56,6 +56,14 @@
                         <li></li>
                         <li></li>
                     </ul>
+                </div>
+                <div class="celander">
+                    <div class="day" data-days>18</div>
+                    <div class="date-info">
+                        <div class="week" data-week>thu</div>
+                        <div class="month" data-month>jul</div>
+                        <div class="years" data-year>2021</div>
+                    </div>
                 </div>
             </section>
             <section class="stopwatch">
@@ -163,23 +171,23 @@
                         <li></li>
                     </ul>
                     <div class="sw-timer">
-                        <div class="sw-miliSecond">00</div>
-                        <div class="colon">:</div>
-                        <div class="sw-second">00</div>
+                        <div class="sw-hour">00</div>
                         <div class="colon">:</div>
                         <div class="sw-minuts">00</div>
                         <div class="colon">:</div>
-                        <div class="sw-hour">00</div>
+                        <div class="sw-second">00</div>
+                        <div class="colon">:</div>
+                        <div class="sw-miliSecond">00</div>
                     </div>
                 </div>
                 <div class="sw-Contoler">
-                    <button><i class="fas fa-play"></i></button>
-                    <button><i class="far fa-pause"></i></button>
-                    <button><i class="fas fa-plus"></i></button>
-                    <button><i class="far fa-undo-alt"></i></button>
+                    <button data-play><i class="fas fa-play"></i></button>
+                    <button data-pause><i class="far fa-pause"></i></button>
+                    <button data-Lap><i class="fas fa-plus"></i></button>
+                    <button data-reset><i class="far fa-undo-alt"></i></button>
                 </div>
                 <ul class="laps">
-                    <li>
+                    <!-- <li>
                         lap.1
                         <span class="record">01:30:59</span>
                         <i class="fas fa-trash"></i>
@@ -188,7 +196,7 @@
                         lap.1
                         <span class="record">01:30:59</span>
                         <i class="fas fa-trash"></i>
-                    </li>
+                    </li> -->
                 </ul>
             </section>
             <section class="alarm">
@@ -200,11 +208,11 @@
                     <div class="alarm-modal-container">
                         <div class="alarm-modal">
                             <div class="celander">
-                                <div class="day">18</div>
+                                <div class="day" data-days>18</div>
                                 <div class="date-info">
-                                    <div class="week">thu</div>
-                                    <div class="month">jul</div>
-                                    <div class="years">2021</div>
+                                    <div class="week" data-week>thu</div>
+                                    <div class="month" data-month>jul</div>
+                                    <div class="years" data-year>2021</div>
                                 </div>
                                 <span class="left"><i class="fas fa-angle-left"></i></span>
                                 <span class="right"><i class="fas fa-angle-right"></i></span>
@@ -212,16 +220,16 @@
                             <div class="set-alarm">
                                 <div class="set-time">
                                     <div class="get-time">
-                                        <p>21</p>
-                                        <p>:</p>
-                                        <p>36</p>
+                                        <p data-setHours>21</p>
+                                        <p class="blinks">:</p>
+                                        <p data-setMinuts>36</p>
                                     </div>
                                     <div class="reger-group">
-                                        <input type="range" name="hour" id="hoursRenge">
-                                        <input type="range" name="minuts" id="minReng">
+                                        <input type="range" name="hour" id="hoursReng" min="1" max="24">
+                                        <input type="range" name="minuts" id="minReng" min="1" max="60">
                                     </div>
                                 </div>
-                                <ul class="days">
+                                <ul class="days" data-setDays>
                                     <li><a href="#">Mo</a></li>
                                     <li><a href="#">Tu</a></li>
                                     <li><a href="#">We</a></li>
@@ -232,8 +240,8 @@
                                     <li><a href="#">all</a></li>
                                 </ul>
                                 <div class="alarm-btn">
-                                    <button><i class="fas fa-check"></i></button>
-                                    <button><i class="fas fa-times"></i></button>
+                                    <button data-ok><i class="fas fa-check"></i></button>
+                                    <button data-cancel><i class="fas fa-times"></i></button>
                                 </div>
                             </div>
                         </div>

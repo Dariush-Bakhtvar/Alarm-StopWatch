@@ -23,7 +23,7 @@
     height: 35px;
     font-size: 1.7rem;
     border-radius: 50%;
-    box-shadow: 7px 7px 15px #c0c8cf, -7px -7px 15px #ffffff;
+    box-shadow: var(--neo-shadow);
     text-align: center;
     line-height: 35px;
 }

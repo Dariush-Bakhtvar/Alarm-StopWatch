@@ -8,10 +8,12 @@
     --app-textColor: #5b6571;
     --gray-shadow: #c0c8cf;
     --light-shadow: #ffffff;
+    --loading: #117096;
+    --activeToggle: #7bcbdb;
     --maxWidth: 100%;
     --maxHeight: 100%;
     --radius: 50%;
-    --neo-shadow: 7px 7px 15px var(--gray-shadow), -7px -7px 22px var(--light-shadow);
+    --neo-shadow: 6px 6px 15px var(--gray-shadow), -2px -2px 7px var(--light-shadow);
     --font-family: "Roboto", sans-serif;
     font-size: 62.5%;
 }
