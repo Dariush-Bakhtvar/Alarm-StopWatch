@@ -250,6 +250,7 @@ setCancel.addEventListener('click', () => {
     modal.classList.remove('activeModal');
     setDays.forEach(item => {
         item.classList.remove('select');
+        alarm.classList.remove('activeAlarm');
     });
     arrDays = [];
 });
